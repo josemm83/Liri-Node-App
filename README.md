@@ -1,5 +1,5 @@
 # Liri-Node-App
-In this assignment, LIRI is born. LIRI is like iPhone's SIRI. 
+In this program, LIRI is born. LIRI is like iPhone's SIRI. 
 However, while SIRI is a Speech Interpretation and Recognition Interface, LIRI is a _Language_ Interpretation and Recognition Interface. 
 LIRI will be a command line node app that takes in parameters and gives you back data.
 There are 4 parameters that Liri will work with: spotify-this-song, concert-this, movie-this, do-what-it-says. 
