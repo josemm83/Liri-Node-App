@@ -50,7 +50,7 @@ function findMovie(){
     }
     axios.get("http://www.omdbapi.com/?t=" + userInput + "&apikey=trilogy").then(
   function(response) {
-    // console.log(response.data.Year);
+    // console.log(response.data); getting data parameters to fill in
     var title = response.data.Title;
     var year = response.data.Year;
     var rating = response.data.Rated;
@@ -82,9 +82,15 @@ function findMovie(){
 }
 
 function findConcert(){//name of venue, venue location, date of the event
-    axios.get("https://rest.bandsintown.com/artists/" + userInput + "/events?app_id=3288377d-41a0-447d-9794-63854cadbaa8")
+    var artist = userInput.split(" ").join("%20");
+    // console.log("artist name: " + artist);
+    axios.get("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp")
     .then(function(response){
-            console.log("data: " + response.name);
+            // console.log("data: " + JSON.stringify(response.data));
+            var venue = response.data[0].venue.name;
+            var location = response.data[0].venue.city + " " + response.data[0].venue.region + " " + response.data[0].venue.country;
+            var date = response.data[0].venue.datetime;
+            console.log("Name of venue: " + venue + "\nLocation of venue: " + location + "\nDate of the event:" + date);
         })
         .catch(function(error){
             if(error.resonse){
