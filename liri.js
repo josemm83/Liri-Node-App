@@ -8,7 +8,7 @@ var keys = require("./keys");
 var spotify = new Spotify(keys.spotify);
 var choice = process.argv[2];
 var userInput = process.argv.slice(3).join(" ");
-// console.log("input: " + userInput);
+writeToFile(choice + " " + userInput + "\n");
 
 function liri(input){
     switch(input) {
@@ -30,6 +30,9 @@ function liri(input){
 }
 
 function findSong(){//artist, song's name, a preview link of the song on Spotify, the album the song is from
+    if(userInput === ""){
+        userInput = "I Want It That Way";
+    }
     spotify.search({type:'track', query: userInput}, function(err, data){
         if(err){
             console.log("Error occured: " + err);
@@ -38,9 +41,11 @@ function findSong(){//artist, song's name, a preview link of the song on Spotify
         var artist = data.tracks.items[0].album.artists[0].name;
         var website = data.tracks.items[0].album.external_urls.spotify;
         var album = data.tracks.items[0].album.name;
-        console.log("Artist: " + artist + "\nSong name: " + userInput + "\nLink to the song on Spotify: " +
-        website + "\nAlbum name: " + album);
-        console.log("*---------------------------------------------------------------*")
+        var songFile = "Artist: " + artist + "\nSong name: " + userInput + "\nLink to the song on Spotify: " +
+            website + "\nAlbum name: " + album;
+        songFile += "\n*-------------------------Spotify Information Over--------------------------------------*\n"; 
+        console.log(songFile);
+        writeToFile(songFile);
     });
 }
 
@@ -59,10 +64,12 @@ function findMovie(){
     var language = response.data.Language;
     var plot = response.data.Plot;
     var actors = response.data.Actors;
-
-    console.log("The movie's name is: " + title + "\nMovie release year: " + year + "\nMovie is rated: " + rating +
+    var movieInfo = "The movie's name is: " + title + "\nMovie release year: " + year + "\nMovie is rated: " + rating +
         "\nRotten Tomatoes Score: " + score + "\nCountry where it was produced: " + produced + "\nAvailable languages: " + language +
-        "\nPlot of the movie: " + plot + "\nActors in the movie: " + actors);
+        "\nPlot of the movie: " + plot + "\nActors in the movie: " + actors
+    movieInfo += "\n*--------------------------------Movie information ended----------------------------------------------------*\n"
+    console.log(movieInfo);
+    writeToFile(movieInfo);
   })
   .catch(function(error) {
     if (error.response) {
@@ -82,6 +89,9 @@ function findMovie(){
 }
 
 function findConcert(){//name of venue, venue location, date of the event
+    if(userInput === ""){
+        userInput = "Backstreet Boys";
+    }
     var artist = userInput.split(" ").join("%20");
     // console.log("artist name: " + artist);
     axios.get("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp")
@@ -89,8 +99,11 @@ function findConcert(){//name of venue, venue location, date of the event
             // console.log("data: " + JSON.stringify(response.data));
             var venue = response.data[0].venue.name;
             var location = response.data[0].venue.city + " " + response.data[0].venue.region + " " + response.data[0].venue.country;
-            var date = response.data[0].venue.datetime;
-            console.log("Name of venue: " + venue + "\nLocation of venue: " + location + "\nDate of the event:" + date);
+            var date = moment(response.data[0].venue.datetime).format('MMMM Do YYYY, h:mm:ss a');
+            var concertInfo = "Name of venue: " + venue + "\nLocation of venue: " + location + "\nDate of the event:" + date;
+            concertInfo += "\n*---------------------------------Concert Information Ended----------------------------------------------*\n"
+            console.log(concertInfo);
+            writeToFile(concertInfo);
         })
         .catch(function(error){
             if(error.resonse){
@@ -118,6 +131,17 @@ function readMe(file){
         userInput = data[1].split('"').join('');
         console.log("Testing choice: " + choice + "\nTesting userInput: " + userInput);
         liri(choice);
+    });
+}
+
+function writeToFile(textFile){
+    fs.appendFile("./log.txt", textFile, function(err) {
+        if (err) {
+            console.log("Unable to write to log.txt" + err);
+        }
+        else {
+            console.log("log.txt was updated!");
+        }
     });
 }
 

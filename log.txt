@@ -1,0 +1,48 @@
+do-what-it-says 
+Artist: Backstreet Boys
+Song name: I Want it That Way
+Link to the song on Spotify: https://open.spotify.com/album/1NslKOZobWxINFaFkLol3r
+Album name: The Hits--Chapter One
+*-------------------------Spotify Information Over--------------------------------------*
+spotify-this-song Darkness
+Artist: Eminem
+Song name: Darkness
+Link to the song on Spotify: https://open.spotify.com/album/4otkd9As6YaxxEkIjXPiZ6
+Album name: Music To Be Murdered By
+*-------------------------Spotify Information Over--------------------------------------*
+movie-this 
+The movie's name is: Mr. Nobody
+Movie release year: 2009
+Movie is rated: R
+Rotten Tomatoes Score: 67%
+Country where it was produced: Belgium, Germany, Canada, France, USA, UK
+Available languages: English, Mohawk
+Plot of the movie: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.
+Actors in the movie: Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
+*--------------------------------Movie information ended----------------------------------------------------*
+movie-this Men in Black
+The movie's name is: Men in Black
+Movie release year: 1997
+Movie is rated: PG-13
+Rotten Tomatoes Score: 92%
+Country where it was produced: USA
+Available languages: English, Spanish
+Plot of the movie: A police officer joins a secret organization that polices and monitors extraterrestrial interactions on Earth.
+Actors in the movie: Tommy Lee Jones, Will Smith, Linda Fiorentino, Vincent D'Onofrio
+*--------------------------------Movie information ended----------------------------------------------------*
+concert-this Celine Dion
+Name of venue: Bell Centre
+Location of venue: Montreal  Canada
+Date of the event:February 16th 2020, 2:39:16 pm
+*---------------------------------Concert Information Ended----------------------------------------------*
+spotify-this-song 
+Artist: Backstreet Boys
+Song name: I Want It That Way
+Link to the song on Spotify: https://open.spotify.com/album/1NslKOZobWxINFaFkLol3r
+Album name: The Hits--Chapter One
+*-------------------------Spotify Information Over--------------------------------------*
+concert-this 
+Name of venue: Palacio de los Deportes
+Location of venue: Mexico  Mexico
+Date of the event:February 16th 2020, 2:48:26 pm
+*---------------------------------Concert Information Ended----------------------------------------------*
