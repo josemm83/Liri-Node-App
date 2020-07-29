@@ -19,7 +19,7 @@ do-what-it-says will take in a text file and use any of the choices in that text
 All of the users log will be saved into a lot.txt file for them to go back on.  The file will not overwrite itself it will just add information from where it left off.  It will also write in the users input that they choose.
 
 ## Examples
-
+![Liri App](https://github.com/josemm83/Liri-Node-App/liri.jpg)
 
 ## Technologies used
 - AXIOS
